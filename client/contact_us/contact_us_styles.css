@@ -3,6 +3,7 @@
   --grey: #6e6e73;
   --light-grey: rgba(0, 0, 0, 0.16);
   --green: #63da9d;
+  --blue: #0066cc;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+/*---------------- Site Navigation CSS ----------------*/
 #nav {
   display: flex;
   align-items: center;
@@ -43,6 +45,10 @@ body {
   display: flex;
 }
 
+.mobile-view-selectable {
+  display: none;
+}
+
 .chevron {
   width: 12px;
   margin-left: 3px;
@@ -70,13 +76,35 @@ body {
   border-radius: 0 50% 50% 0;
 }
 
+/*Site Navigation mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #nav-content {
+    width: 280px;
+  }
 
+  #site-name {
+    font-size: 21px;
+  }
+  #nav-selectables {
+    width: 108px;
+  }
 
+  .selectable {
+    display: none;
+  }
+
+  .mobile-view-selectable {
+    display: flex;
+  }
+}
+
+/*----------------Main Content CSS ----------------*/
 #content {
   width: 980px;
   margin: 0 auto;
 }
 
+/*---------------- Headline CSS ----------------*/
 .headline {
   display: flex;
   flex-direction: column;
@@ -86,6 +114,8 @@ body {
 }
 
 .title {
+  text-align: center;
+  width: 877px;
   font-size: 80px;
   font-weight: 600;
   color: var(--black);
@@ -100,6 +130,30 @@ body {
   margin: 0px;
 }
 
+/*Headline mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #content {
+    width: 280px;
+  }
+  .headline {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    width: 282px;
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .headline p {
+    width: 242px;
+    font-size: 14px;
+  }
+}
+
+/*---------------- Content Break CSS ----------------*/
 .content-break {
   width: 980px;
   height: 1px;
@@ -107,6 +161,22 @@ body {
   background-color: var(--light-grey);
 }
 
+/*Content Break tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  .content-break {
+    width: 720px;
+  }
+}
+
+/*Content Break mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .content-break {
+    width: 280px;
+  }
+}
+
+
+/*---------------- Contact Methods CSS ----------------*/
 .contact-methods {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -129,13 +199,43 @@ body {
 .contact-methods ul li div {
   margin-top: 19px;
   margin-bottom: 11px;
+  font-size: 19px;
   width: 100%;
   text-align: center;
 }
 
+.contact-methods ul li a{
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.contact-methods ul li a:hover {
+  text-decoration: underline;
+}
+
+.contact-methods ul li a .chevron {
+  filter: invert(23%) sepia(70%) saturate(4641%) hue-rotate(199deg) brightness(91%) contrast(102%);
+  transform: rotate(-90deg);
+}
+
+/*Contact Methods mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .contact-methods ul {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-methods ul li:nth-child(2) {
+    margin-top: 60px;
+  }
+
+}
+
+/*---------------- Team Section CSS ----------------*/
 .team {
-  margin-top: 120px;
-  margin-bottom: 120px;
+  padding: 120px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,6 +296,35 @@ body {
   font-size: 17px;
 }
 
+/*Team section mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .team {
+    padding: 60px 0;
+  }
+
+  .team p {
+    width: 242px;
+    font-size: 14px;
+  }
+
+  .team ul {
+    width: 242px;
+    padding-left: 0px;
+    flex-direction: column;
+    margin-top: 0px;
+    align-items: center;
+  }
+
+  .left {
+    margin-right: 0px;
+  }
+
+  .right {
+    margin-left: 0px;
+  }
+}
+
+/*---------------- Footer CSS ----------------*/
 #footer {
   height: 113px;
   background-color: #f5f5f7;
@@ -215,4 +344,17 @@ body {
 
 #footer-copyright{
   padding-top: 9.1px;
+}
+/*Footer tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  #footer-content {
+    width: 720px;
+  }
+}
+
+/*Footer mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #footer-content {
+    width:280px;
+  }
 }
