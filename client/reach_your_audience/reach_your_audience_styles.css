@@ -12,6 +12,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/*---------------- Content Break CSS ----------------*/
 .content-break {
   width: 980px;
   height: 1px;
@@ -19,6 +20,21 @@ body {
   background-color: var(--light-grey);
 }
 
+/*Content Break tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  .content-break {
+    width: 720px;
+  }
+}
+
+/*Content Break mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .content-break {
+    width: 280px;
+  }
+}
+
+/*---------------- Site Navigation CSS ----------------*/
 #nav {
   display: flex;
   align-items: center;
@@ -79,11 +95,41 @@ body {
   border-radius: 0 50% 50% 0;
 }
 
+/*Site Navigation mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #nav-content {
+    width: 280px;
+  }
+
+  #site-name {
+    font-size: 21px;
+  }
+  #nav-selectables {
+    width: 108px;
+  }
+
+  .selectable {
+    display: none;
+  }
+
+  .mobile-view-selectable {
+    display: flex;
+  }
+}
+
+/*----------------Main Content CSS ----------------*/
 #content {
   width: 980px;
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 734px) {
+  #content {
+    width: 280px;
+  }
+}
+
+/*---------------- Headline CSS ----------------*/
 .headline {
   display: flex;
   flex-direction: column;
@@ -93,6 +139,8 @@ body {
 }
 
 .headline div{
+  text-align: center;
+  width: 877px;
   font-size: 80px;
   font-weight: 600;
   margin-bottom: 38px;
@@ -106,6 +154,28 @@ body {
   color: var(--grey)
 }
 
+/*Headline mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .headline {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 87px;
+  }
+
+  .headline div {
+    width: 282px;
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .headline p {
+    width: 242px;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+/*---------------- Tab Navigation CSS ----------------*/
 .navigation {
   text-align: center;
   overflow: auto;
@@ -139,30 +209,65 @@ body {
   border-bottom: 1px solid var(--black);
 }
 
+.pipe, .arrow {
+  display: none;
+}
+
+@media only screen and (max-width: 1068px) {
+  .navigation div.first {
+    padding-left: 135px;
+  }
+  
+  .navigation div.last {
+    padding-right: 135px;
+  }
+}
+
+/*Tab Navigation mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .tab-nav {
+    display: flex;
+    width: 280px;
+    align-items: center;
+  }
+
+  .navigation div.first {
+    padding-left: 30px;
+  }
+  
+  .navigation div.last {
+    padding-right: 30px;
+  }
+
+  .pipe {
+    z-index: 3;
+    display: flex;
+    width: 1px;
+    height: 78px;
+    margin: 0 10.5px 0 0;
+    background-color: #d2d2d7;
+    padding: 0;
+  }
+  .arrow {
+    z-index: 3;
+    transform: rotate(-90deg);
+    display: flex;
+    width: 12px;
+    height: 20px;
+    opacity: 0.8;
+    margin: 15px 0 17px 0;
+    line-height: 1.18;
+    color: var(--black);
+  }
+}
+
+/*---------------- Navigation Content CSS ----------------*/
 #navigation-content {
   width: 652px;
   margin: 60px auto;
   color: var(--black);
 }
 
-.content-subcontent {
-  margin-bottom: 48px;
-}
-
-.content-info {
-  color: var(--grey);
-  font-size: 17px;
-  line-height: 25px;
-}
-
-.content-link {
-  text-decoration: none;
-  color: var(--blue);
-}
-
-.content {
-  padding-top:
-}
 .content-headline {
   font-size: 64px;
   font-weight: 600;
@@ -170,11 +275,27 @@ body {
   margin-bottom: 80px;
 }
 
+.content-subcontent {
+  margin-bottom: 48px;
+}
+
 .content-subheadline {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 17px;
 }
+
+.content-info {
+  color: var(--grey);
+  font-size: 17px;
+  line-height: 1.47;
+}
+
+.content-link {
+  text-decoration: none;
+  color: var(--blue);
+}
+
 
 #performance-list {
   padding-left: 20px;
@@ -192,6 +313,47 @@ body {
   margin-bottom: 80px;
 }
 
+/*Navigation Content mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #navigation-content {
+    width: 280px;
+    margin-top: 37px;
+  }
+
+  .content-headline {
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
+
+  .content-subcontent {
+    margin-bottom: 60px;
+    width: 242px;
+  }
+
+  .content-subheadline {
+    font-size: 21px;
+  }
+
+  .content-info {
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  .content-link-div {
+    font-size: 14px;
+  }
+  .content-link {
+    font-size: 14px;
+  }
+
+  #final-div {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+}
+
+/*---------------- Footer CSS ----------------*/
 #footer {
   height: 113px;
   background-color: #f5f5f7;
@@ -211,4 +373,17 @@ body {
 
 #footer-copyright{
   padding-top: 9.1px;
+}
+/*Footer tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  #footer-content {
+    width: 720px;
+  }
+}
+
+/*Footer mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #footer-content {
+    width:280px;
+  }
 }
