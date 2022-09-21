@@ -13,6 +13,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/*---------------- Content Break CSS ----------------*/
 .content-break {
   width: 980px;
   height: 1px;
@@ -20,6 +21,21 @@ body {
   background-color: var(--light-grey);
 }
 
+/*Content Break tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  .content-break {
+    width: 720px;
+  }
+}
+
+/*Content Break mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .content-break {
+    width: 280px;
+  }
+}
+
+/*---------------- Site Navigation CSS ----------------*/
 #nav {
   display: flex;
   align-items: center;
@@ -80,11 +96,42 @@ body {
   border-radius: 0 50% 50% 0;
 }
 
+/*Site Navigation mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #nav-content {
+    width: 280px;
+  }
+
+  #site-name {
+    font-size: 21px;
+  }
+  #nav-selectables {
+    width: 108px;
+  }
+
+  .selectable {
+    display: none;
+  }
+
+  .mobile-view-selectable {
+    display: flex;
+  }
+}
+
+/*----------------Main Content CSS ----------------*/
 #content {
   width: 980px;
   margin: 0 auto;
 }
 
+/*Main Content mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #content {
+    width: 280px;
+  }
+}
+
+/*---------------- Headline CSS ----------------*/
 .headline {
   display: flex;
   flex-direction: column;
@@ -94,6 +141,8 @@ body {
 }
 
 .headline div{
+  text-align: center;
+  width: 877px;
   font-size: 80px;
   font-weight: 600;
   margin-bottom: 38px;
@@ -104,10 +153,32 @@ body {
   font-size: 24px;
   width: 386px;
   text-align: center;
-  line-height: 1.17;
   color: var(--grey)
 }
 
+/*Headline mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .headline {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 87px;
+  }
+
+  .headline div {
+    width: 282px;
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .headline p {
+    width: 242px;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+
+/*---------------- Tab Navigation CSS ----------------*/
 .navigation {
   text-align: center;
   overflow: auto;
@@ -123,11 +194,11 @@ body {
 }
 
 .navigation div.first {
-  padding-left: 287px;
+  padding-left: 249px;
 }
 
 .navigation div.last {
-  padding-right: 265px;
+  padding-right: 249px;
 }
 
 .navigation div a{
@@ -141,13 +212,61 @@ body {
   border-bottom: 1px solid var(--black);
 }
 
-/* #navigation-content {
-  width: 652px;
-  margin: 60px auto;
-  color: var(--black);
-} */
+.pipe, .arrow {
+  display: none;
+}
 
+@media only screen and (max-width: 1068px) {
+  .navigation div.first {
+    padding-left: 135px;
+  }
+  
+  .navigation div.last {
+    padding-right: 135px;
+  }
+}
+
+/*Tab Navigation mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .tab-nav {
+    display: flex;
+    width: 280px;
+    align-items: center;
+  }
+
+  .navigation div.first {
+    padding-left: 30px;
+  }
+  
+  .navigation div.last {
+    padding-right: 30px;
+  }
+
+  .pipe {
+    z-index: 3;
+    display: flex;
+    width: 1px;
+    height: 78px;
+    margin: 0 10.5px 0 0;
+    background-color: #d2d2d7;
+    padding: 0;
+  }
+  .arrow {
+    z-index: 3;
+    transform: rotate(-90deg);
+    display: flex;
+    width: 12px;
+    height: 20px;
+    opacity: 0.8;
+    margin: 15px 0 17px 0;
+    line-height: 1.18;
+    color: var(--black);
+  }
+}
+
+/*---------------- Announcements Section CSS ----------------*/
 #announcements {
+  width: 980px;
   margin-top: 124px;
   margin-bottom: 80px;
 }
@@ -208,6 +327,48 @@ body {
   transform: rotate(-90deg);
 }
 
+/*Announcements Section mobile view media queries*/
+@media only screen and (max-width:734px) {
+  #announcements {
+    width: 282px;
+    margin-top: 52px;
+    margin-bottom: 60px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .announcement-title {
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+  .announcements-content {
+    flex-direction: column;
+  }
+
+  .announcements-content .gradient-image {
+    margin-right: 0px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .announcements-content div {
+    padding-top: 30px;
+    width: 280px;
+  }
+
+  .announcements-content div h2 {
+    font-size: 21px;
+  }
+
+  .announcements-content div p, a {
+    font-size: 14px;
+  }
+}
+
+/*---------------- Release Notes Section CSS ----------------*/
 #release-note {
   margin-top: 48px;
   margin-bottom: 28px;
@@ -244,6 +405,37 @@ body {
   padding-bottom: 20px;
 }
 
+/*Release Notes Section mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #release-note {
+    width: 280px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .release-note-title {
+    font-size: 19px;
+    margin-bottom: 30px;
+  }
+
+  #release-note h2 {
+    font-size: 21px;
+    margin-bottom: 24px;
+  }
+
+  #release-note p {
+    width: 280px;
+    padding-bottom: 30px;
+    font-size: 14px;
+  }
+
+  #release-note ul {
+    width: 250px;
+    font-size: 14px;
+  }
+}
+
+/*---------------- More Announcements Section CSS ----------------*/
 #more-announcements {
   margin-top: 48px;
 }
@@ -257,6 +449,24 @@ body {
   height: 208px;
 }
 
+/*More Announcements Section mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #more-announcements {
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
+
+  .more-announcement {
+    padding-top: 60px;
+  }
+
+  #more-announcements .announcements-content .gradient-image {
+    width: 280px;
+    height: 177px;
+  }
+}
+
+/*---------------- Older Posts Button CSS ----------------*/
 #older-posts {
   margin-top: 48px;
   margin-bottom: 169px;
@@ -277,6 +487,15 @@ body {
   transform: rotate(-90deg);
 }
 
+/*Older Posts Button mobile view media queries*/
+@media only screen and (max-width:734px) {
+  #older-posts {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+}
+
+/*---------------- Footer CSS ----------------*/
 #footer {
   height: 113px;
   background-color: #f5f5f7;
@@ -296,4 +515,17 @@ body {
 
 #footer-copyright{
   padding-top: 9.1px;
+}
+/*Footer tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  #footer-content {
+    width: 720px;
+  }
+}
+
+/*Footer mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #footer-content {
+    width:280px;
+  }
 }
