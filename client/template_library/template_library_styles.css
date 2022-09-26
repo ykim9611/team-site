@@ -1,0 +1,372 @@
+:root {
+  --black: #050529;
+  --grey: #6e6e73;
+  --light-grey: rgba(0, 0, 0, 0.16);
+  --green: #63da9d;
+  --blue: #0066cc;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/*---------------- Content Break CSS ----------------*/
+.content-break {
+  width: 1295px;
+  height: 1px;
+  margin: 0 auto;
+  background-color: var(--light-grey);
+}
+
+/*Content Break tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  .content-break {
+    width: 720px;
+  }
+}
+
+/*Content Break mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .content-break {
+    width: 280px;
+  }
+}
+
+/*---------------- Site Navigation CSS ----------------*/
+#nav {
+  display: flex;
+  align-items: center;
+  height: 53px;
+  border-bottom: 1px solid var(--light-grey);
+  color: var(--black);
+}
+
+#nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 980px;
+}
+
+#site-name {
+  font-size: 24px;
+  font-weight: 600px;
+}
+
+#nav-selectables {
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.selectable {
+  display: flex;
+}
+
+.chevron {
+  width: 12px;
+  margin-left: 3px;
+}
+
+.mobile-view-selectable {
+  display: none;
+}
+
+#login-button {
+  display: flex;
+}
+
+#login-text {
+  background-color: var(--green);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#login-button div:first-child{
+  width: 25px;
+  background-color: var(--green);
+  border-radius: 50% 0 0 50%;
+}
+
+#login-button div:last-child{
+  width: 25px;
+  background-color: var(--green);
+  border-radius: 0 50% 50% 0;
+}
+
+/*Site Navigation mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #nav-content {
+    width: 280px;
+  }
+
+  #site-name {
+    font-size: 21px;
+  }
+  #nav-selectables {
+    width: 108px;
+  }
+
+  .selectable {
+    display: none;
+  }
+
+  .mobile-view-selectable {
+    display: flex;
+  }
+}
+
+/*---------------- Headline Section CSS ----------------*/
+
+#headline {
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+#headline div {
+  font-size: 80px;
+  font-weight: 600;
+}
+
+#headline p {
+  width: 740px;
+  text-align: center;
+  font-size: 24px;
+  color: var(--grey);
+}
+
+
+/*---------------- Filters-headline Section CSS ----------------*/
+
+.full-width {
+  width: 100%;
+}
+
+.filters-headline #button{
+  font-size: 12px;
+  width: 1295px;
+  margin: 23px auto;
+}
+
+#button a {
+  color: var(--blue);
+}
+
+#button a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/*---------------- Library Section CSS ----------------*/
+
+#library {
+  width: 1295px;
+  /* margin-left: 145px; */
+  margin: 0 auto;
+  display: flex;
+
+}
+
+.filters {
+  padding-top: 48px;
+  width: 188px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filters button {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #1d1d1f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.flip {
+  animation: flip 0.4s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flip {
+  100% {transform: rotateX(180deg);}
+}
+
+.unflip {
+  animation: unflip 0.4s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes unflip {
+  0% {transform: rotateX(180deg);}
+  100% {transform: rotateX(0deg);}
+}
+
+.filters .panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  transition: padding-top 0.4s ease-out;
+}
+
+.filters .panel div {
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  text-align: start;
+  font-size: 14px;
+  font-weight: normal;
+  width: 188px;
+  min-height: 32px;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.selected {
+  background-color: #f5f5f7;
+  color: var(--blue);
+}
+
+.filters .panel div:hover {
+  color: var(--blue);
+}
+
+
+.filter-content-break {
+  width: 188px;
+  height: 1px;
+  margin: 14px auto;
+  background-color: var(--light-grey);
+}
+
+.vertical-content-break {
+  width: 1.5px;
+  height: auto;
+  background-color: var(--light-grey);
+  margin-left: 24px;
+  margin-right: 21.5px;
+}
+
+/*---------------- Templates Section CSS ----------------*/
+
+.template-container {
+  display: flex;
+  width: 1081.5px;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.template {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 23px 24px 0px;
+}
+
+.image-div{
+  display: flex;
+  width: 329px;
+  height: 550px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.template-hover{
+  display: flex;
+  flex-direction: column;
+  width: 261px;
+  height: 496px;
+  background-color: #f5f5f7;
+  border-radius: 18px;
+  padding: 54px 33px 0px 35px;
+}
+
+.hidden {
+  display: none;
+}
+
+.template-hover .template-content div{
+  color: #1d1d1f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.template-hover .template-content p{
+  color: #424245;
+  font-size: 14px;
+  margin: 0px;
+  padding-top: 20px;
+  padding-bottom: 36px;
+}
+
+.template-hover .template-content a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.template-hover .template-content a .chevron {
+  filter: invert(23%) sepia(70%) saturate(4641%) hue-rotate(199deg) brightness(91%) contrast(102%);
+  transform: rotate(-90deg);
+}
+
+.template-title {
+  margin-top: 11px;
+  height: 50px;
+  width: 329px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+/*---------------- Footer CSS ----------------*/
+#footer {
+  height: 113px;
+  background-color: #f5f5f7;
+}
+
+#footer-content {
+  color: var(--grey);
+  font-size: 12px;
+  width: 1295px;
+  margin: 0 auto;
+}
+
+#footer-text {
+  padding-top: 34px;
+  padding-bottom: 8px;
+}
+
+#footer-copyright{
+  padding-top: 9.1px;
+}
+/*Footer tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  #footer-content {
+    width: 720px;
+  }
+}
+
+/*Footer mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #footer-content {
+    width:280px;
+  }
+}
