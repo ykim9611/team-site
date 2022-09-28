@@ -1,0 +1,343 @@
+:root {
+  --black: #050529;
+  --grey: #6e6e73;
+  --light-grey: rgba(0, 0, 0, 0.16);
+  --green: #63da9d;
+  --blue: #0066cc;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/*---------------- Content Break CSS ----------------*/
+.content-break {
+  width: 980px;
+  height: 1px;
+  margin: 0 auto;
+  background-color: var(--light-grey);
+}
+
+/*Content Break tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  .content-break {
+    width: 720px;
+  }
+}
+
+/*Content Break mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  .content-break {
+    width: 280px;
+  }
+}
+
+/*---------------- Site Navigation CSS ----------------*/
+#nav {
+  display: flex;
+  align-items: center;
+  height: 53px;
+  border-bottom: 1px solid var(--light-grey);
+  color: var(--black);
+}
+
+#nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 980px;
+}
+
+#site-name {
+  font-size: 24px;
+  font-weight: 600px;
+}
+
+#nav-selectables {
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.selectable {
+  display: flex;
+}
+
+.chevron {
+  width: 12px;
+  margin-left: 3px;
+}
+
+#login-button {
+  display: flex;
+}
+
+#login-text {
+  background-color: var(--green);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#login-button div:first-child{
+  width: 25px;
+  background-color: var(--green);
+  border-radius: 50% 0 0 50%;
+}
+
+#login-button div:last-child{
+  width: 25px;
+  background-color: var(--green);
+  border-radius: 0 50% 50% 0;
+}
+
+/*Site Navigation mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #nav-content {
+    width: 280px;
+  }
+
+  #site-name {
+    font-size: 21px;
+  }
+  #nav-selectables {
+    width: 108px;
+  }
+
+  .selectable {
+    display: none;
+  }
+
+  .mobile-view-selectable {
+    display: flex;
+  }
+}
+
+/*---------------- Main Content CSS ----------------*/
+
+#content {
+  width: 980px;
+  margin: 38px auto 202px;
+}
+
+#back-button {
+  display: block;
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 28px;
+}
+
+#back-button:hover {
+  text-decoration: underline;
+}
+
+#back-button img {
+  filter: invert(23%) sepia(70%) saturate(4641%) hue-rotate(199deg) brightness(91%) contrast(102%);
+  transform: rotate(90deg);
+}
+
+#template-title {
+  color: #1d1d1f;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+#content p {
+  width: 480px;
+  color: #1d1d1f;
+  font-size: 17px;
+  line-height: 1.47;
+  margin-bottom: 38px;
+}
+
+#tags {
+  font-size: 12px;
+  width: 280px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 59px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+#toggles {
+  
+}
+
+#top-toggles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#viewports {
+  display: flex;
+  justify-content: space-between;
+  width: 288px;
+}
+
+.viewport {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.selected-viewport {
+  font-weight: 600;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #1d1d1f;
+}
+
+.viewport:hover {
+  font-weight: 600;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #1d1d1f;
+}
+
+#use-template-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 163px;
+  height: 24px;
+  padding: 0px 11px;
+  background-color: #0071e3;
+}
+
+#wireframe-toggle {
+  display: flex;
+  align-items: center;
+  margin: 28px auto;
+  width: 242px;
+  height: 24px;
+  border-radius: 5px;
+  border: 2px solid #e8e8ed;
+  background-color: #e8e8ed;
+}
+
+#wireframe-toggle div:first-child {
+  margin-right: 2px;
+}
+#wireframe-toggle div {
+  font-size: 12px;
+  font-weight: 600;
+  width: 120px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#wireframe-toggle div:hover {
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.wireframe-toggled {
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#template-desktop {
+  display: block;
+}
+
+#template-tablet {
+  display: none;
+}
+
+#template-mobile {
+  display: none;
+}
+
+.template-preview-page div {
+  overflow: scroll;
+}
+
+.template-preview-desktop {
+  box-sizing: border-box;
+  width: 980px;
+  height: 574px;
+  border-radius: 8px;
+  border: 1px solid #e8e8ed;
+  background-color: #e8e8ed;
+  padding: 24px 0 0;
+}
+
+.template-preview-tablet {
+  box-sizing: border-box;
+  width: 980px;
+  height: 574px;
+  border-radius: 8px;
+  border: 1px solid #e8e8ed;
+  background-color: #e8e8ed;
+  padding: 0 50px;
+}
+
+.template-preview-mobile {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 389px;
+  height: 574px;
+  border-radius: 8px;
+  border: 1px solid #e8e8ed;
+  background-color: #e8e8ed;
+  padding: 36px 0 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.wireframe-page-off {
+  display: none;
+}
+/*---------------- Footer CSS ----------------*/
+#footer {
+  height: 113px;
+  background-color: #f5f5f7;
+}
+
+#footer-content {
+  color: var(--grey);
+  font-size: 12px;
+  width: 980px;
+  margin: 0 auto;
+}
+
+#footer-text {
+  padding-top: 34px;
+  padding-bottom: 8px;
+}
+
+#footer-copyright{
+  padding-top: 9.1px;
+}
+/*Footer tablet view media queries*/
+@media only screen and (max-width: 1068px) {
+  #footer-content {
+    width: 720px;
+  }
+}
+
+/*Footer mobile view media queries*/
+@media only screen and (max-width: 734px) {
+  #footer-content {
+    width:280px;
+  }
+}
