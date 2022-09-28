@@ -1,7 +1,7 @@
 const templates = [
   {
     title: "Template 1",
-    img: "/images/placeholder.png",
+    img: "/images/template-preview-image.png",
     services: ["pay", "tv"],
     components: ["content-river"],
     types: ["marketing", "information", "blog"],
@@ -12,7 +12,7 @@ const templates = [
   },
   {
     title: "Template 2",
-    img: "/images/placeholder.png",
+    img: "/images/template-preview-image.png",
     services: ["music", "tv", "fitness"],
     components: ["content-river", "accordion"],
     types: ["information"],
@@ -23,7 +23,7 @@ const templates = [
   },
   {
     title: "Template 3",
-    img: "/images/placeholder.png",
+    img: "/images/template-preview-image.png",
     services: ["music", "arcade"],
     components: ["sticky-slider"],
     types: ["blog"],
@@ -34,7 +34,7 @@ const templates = [
   },
   {
     title: "Template 4",
-    img: "/images/placeholder.png",
+    img: "/images/template-preview-image.png",
     services: ["music", "pay", "tv"],
     components: ["content-river", "accordion", "sticky-slider"],
     types: ["marketing", "blog"],
@@ -45,7 +45,7 @@ const templates = [
   },
   {
     title: "Template 5",
-    img: "/images/placeholder.png",
+    img: "/images/template-preview-image.png",
     services: ["music", "tv", "news"],
     components: ["content-river", "sticky-slider"],
     types: ["information"],
@@ -56,7 +56,7 @@ const templates = [
   },
   {
     title: "Template 6",
-    img: "/images/placeholder.png",
+    img: "/images/template-preview-image.png",
     services: ["music", "pay", "books"],
     components: ["accordion", "sticky-slider"],
     types: ["marketing"],
@@ -68,16 +68,12 @@ const templates = [
 ];
 
 function addGlobalEventListener(type, selector, callback) {
-  document.addEventListener(
-    type,
-    (e) => {
-      if (e.target.matches(selector)) {
-        e.stopPropagation();
-        callback(e);
-      }
+  document.addEventListener(type, (e) => {
+    if (e.target.matches(selector)) {
+      e.stopPropagation();
+      callback(e);
     }
-    // { capture: true }
-  );
+  });
 }
 addGlobalEventListener("mouseover", ".image-div", (e) => handleOnHover(e));
 addGlobalEventListener("mouseout", ".template-hover", (e) => handleOffHover(e));
@@ -88,15 +84,11 @@ const handleOnHover = (event) => {
   var hoveredTemplate = event.target;
   hoveredTemplate.classList.add("hidden");
   hoveredTemplate.nextSibling.classList.remove("hidden");
-  // event.stopPropagation();
 };
 
 const handleOffHover = (event) => {
-  console.log("here");
   event.stopPropagation();
   var hoveredTemplate = event.target;
-  // console.log(event.target);
-  // console.log(hoveredTemplate);
   if (hoveredTemplate.matches(".template-hover")) {
     hoveredTemplate.classList.add("hidden");
     hoveredTemplate.previousSibling.classList.remove("hidden");
@@ -121,7 +113,6 @@ const createBlock = (block) => {
   const imageDiv = document.createElement("img");
   imageDiv.src = block.img;
   imageDiv.classList.add("image-div");
-  // imageDiv.addEventListener("mouseover", handleOnHover);
   templateDiv.appendChild(imageDiv);
 
   //Template Hover state div
@@ -158,8 +149,6 @@ const createBlock = (block) => {
   templateDiv.appendChild(titleDiv);
 
   templateContainer.appendChild(templateDiv);
-
-  console.log(templateContainer);
 };
 
 for (var template of templates) {
@@ -231,7 +220,6 @@ for (var i = 0; i < accordionButtons.length; i++) {
         selectedFilters.push(filterElement.id);
         applyFilters();
       }
-      console.log(selectedFilters);
     });
     panel.appendChild(optionDiv);
   }
@@ -239,7 +227,6 @@ for (var i = 0; i < accordionButtons.length; i++) {
 
 const applyFilters = () => {
   const templateBlocks = document.querySelectorAll(".template");
-  console.log(templateBlocks);
   for (var templateBlock of templateBlocks) {
     templateBlock.style.display = "flex";
     const templateBlockAppliedFilters = templateBlock.classList;
