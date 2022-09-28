@@ -20,13 +20,6 @@ body {
   background-color: var(--light-grey);
 }
 
-/*Content Break tablet view media queries*/
-@media only screen and (max-width: 1068px) {
-  .content-break {
-    width: 720px;
-  }
-}
-
 /*Content Break mobile view media queries*/
 @media only screen and (max-width: 734px) {
   .content-break {
@@ -124,12 +117,20 @@ body {
   margin: 38px auto 202px;
 }
 
+#buttons-container {
+  display: flex;
+  margin-bottom: 28px;
+}
+
+#buttons-container .use-template-button{
+  display: none;
+}
+
 #back-button {
   display: block;
   color: var(--blue);
   text-decoration: none;
   cursor: pointer;
-  margin-bottom: 28px;
 }
 
 #back-button:hover {
@@ -139,6 +140,20 @@ body {
 #back-button img {
   filter: invert(23%) sepia(70%) saturate(4641%) hue-rotate(199deg) brightness(91%) contrast(102%);
   transform: rotate(90deg);
+}
+
+.use-template-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 163px;
+  height: 24px;
+  padding: 0px 11px;
+  background-color: #0071e3;
 }
 
 #template-title {
@@ -168,10 +183,6 @@ body {
 
 .bold {
   font-weight: 600;
-}
-
-#toggles {
-  
 }
 
 #top-toggles {
@@ -204,19 +215,6 @@ body {
   border-bottom: 1px solid #1d1d1f;
 }
 
-#use-template-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  width: 163px;
-  height: 24px;
-  padding: 0px 11px;
-  background-color: #0071e3;
-}
 
 #wireframe-toggle {
   display: flex;
@@ -232,6 +230,7 @@ body {
 #wireframe-toggle div:first-child {
   margin-right: 2px;
 }
+
 #wireframe-toggle div {
   font-size: 12px;
   font-weight: 600;
@@ -307,6 +306,55 @@ body {
 .wireframe-page-off {
   display: none;
 }
+
+@media only screen and (max-width: 734px) {
+  #content {
+    width: 280px;
+    margin: 12px auto 60px;
+  }
+
+  #buttons-container {
+    width: inherit;
+    height: 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #buttons-container .use-template-button{
+    display: flex;
+  }
+
+  #toggles .content-break {
+    display: none;
+  }
+
+  #template-title, p, #top-toggles, #tags, #template-desktop, #template-tablet {
+    display: none;
+  }
+
+  #template-mobile {
+    display: block;
+  }
+
+  .template-preview-page div {
+    overflow:visible;
+  }
+
+  .template-preview-mobile {
+    height: auto;
+    width: 280px;
+    padding-top: 0px;
+    background-color: #ffffff;
+    border: none;
+  }
+
+  .template-preview-mobile img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 /*---------------- Footer CSS ----------------*/
 #footer {
   height: 113px;
