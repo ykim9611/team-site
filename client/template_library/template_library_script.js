@@ -135,7 +135,7 @@ const createBlock = (block) => {
   const descriptionContent = document.createElement("p");
   descriptionContent.innerHTML = block.summary;
   const previewTemplateButton = document.createElement("a");
-  previewTemplateButton.href = "";
+  previewTemplateButton.href = "/template-library/template";
   previewTemplateButton.innerHTML = "Preview Template";
   const chevronButton = document.createElement("img");
   chevronButton.classList.add("chevron");
