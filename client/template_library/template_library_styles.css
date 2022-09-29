@@ -145,6 +145,24 @@ body {
   color: var(--grey);
 }
 
+@media screen and (max-width: 734px) {
+  #headline {
+    width: 280px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  #headline div {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  #headline p {
+    width: 230px;
+    font-size: 14px;
+  }
+}
+
 
 /*---------------- Filters-headline Section CSS ----------------*/
 
@@ -167,6 +185,11 @@ body {
   text-decoration: underline;
 }
 
+@media screen and (max-width: 734px) {
+  .filters-headline {
+    display: none;
+  }
+}
 
 /*---------------- Library Section CSS ----------------*/
 
@@ -266,6 +289,21 @@ body {
   margin-right: 21.5px;
 }
 
+@media screen and (max-width: 734px) {
+  #library {
+    width: 280px;
+    margin-bottom: 84px;
+  }
+
+  .filters {
+    display: none;
+  }
+
+  .vertical-content-break {
+    display: none;
+  }
+}
+
 /*---------------- Templates Section CSS ----------------*/
 
 .template-container {
@@ -336,6 +374,27 @@ body {
   font-weight: 600;
 }
 
+@media screen and (max-width: 734px) {
+  .template {
+    margin: 0px auto 59px;
+  }
+
+  .image-div {
+    max-width: 280px;
+    height: 468px;
+  }
+
+  .template-hover {
+    width: 252px;
+    height: 414px;
+    /* padding: 54px 23px 0px 25px; */
+    padding: 54px 13px 0px 15px;
+  }
+
+  .template-title {
+    width: 280px;
+  }
+}
 /*---------------- Footer CSS ----------------*/
 #footer {
   height: 113px;
