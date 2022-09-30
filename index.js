@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
-const port = 3001;
+const port = 3000;
 const path = require("path");
 
 app.use(express.static(path.join(__dirname, "client/contact_us")));
